@@ -23,6 +23,7 @@ AutoMethod Interface
 
 Exceptions
 ----------
+.. autoexception:: unifi_sync.UnifiSyncClientException
 .. autoexception:: requests.RequestException
 .. autoexception:: requests.ConnectionError
 

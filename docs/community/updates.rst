@@ -12,4 +12,4 @@ GitHub
 
 The best way to track the development is through the GitHub project |git_project|
 
-.. include:: ../../HISTORY.md
+.. include:: ../../CHANGELOG.md
