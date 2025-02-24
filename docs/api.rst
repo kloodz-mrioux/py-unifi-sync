@@ -20,13 +20,3 @@ AutoMethod Interface
     :undoc-members:
     :inherited-members:
     :show-inheritance:
-
-Exceptions
-----------
-.. autoexception:: unifi_sync.UnifiSyncClientException
-.. autoexception:: requests.RequestException
-.. autoexception:: requests.ConnectionError
-
-
-
-

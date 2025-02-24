@@ -85,18 +85,6 @@ this part of the documentation is for you.
    api
 
 
-The Contributor Guide
----------------------
-
-If you want to contribute to the project, this part of the documentation is for
-you.
-
-.. toctree::
-   :maxdepth: 3
-
-   dev/contributing
-   dev/authors
-
 The Community Guide
 -------------------
 
@@ -113,6 +101,20 @@ Requests ecosystem and community.
 
    community/updates
 
+
+The Contributor Guide
+---------------------
+
+If you want to contribute to the project, this part of the documentation is for
+you.
+
+.. toctree::
+   :maxdepth: 3
+
+   dev/contributing
+   dev/authors
+
+{{ pathto('genindex') }}">Glossary</a>
 
 Project Name
 ---------------------------
