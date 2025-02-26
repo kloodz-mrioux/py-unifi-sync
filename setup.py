@@ -6,8 +6,10 @@ from codecs import open as codecs_open
 about = {}
 base_path = os.path.abspath(os.path.dirname(__file__))
 
+
 def read(*parts):
     return Path(__file__).resolve().parent.joinpath(*parts).read_text().strip()
+
 
 with codecs_open(os.path.join(base_path, "src", "unifi_sync", "__version__.py"), "r", "utf-8") as f:
     exec(f.read(), about)
