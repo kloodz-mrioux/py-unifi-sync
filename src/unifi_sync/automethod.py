@@ -4,6 +4,7 @@ from typing import Optional
 
 logger = logging.getLogger(__name__)
 
+
 class AutoMethod:
     """AutoMethod provides methods to manage callback used in unifi-sync client
     """
@@ -24,7 +25,7 @@ class AutoMethod:
                 return True
         return False
 
-    def list_method(self, method_name: Optional[str] = '') -> dict[str,str]:
+    def list_method(self, method_name: Optional[str] = '') -> dict[str, str]:
         """
         Get dictionary for method_name or all methods
 
@@ -39,7 +40,8 @@ class AutoMethod:
         else:
             return self._am_callback
 
-    def add_method(self, method_name: str, request_method: str, urlpath: str, argv: Optional[str] = '', dargv: Optional[str] = '') -> bool:
+    def add_method(self, method_name: str, request_method: str, urlpath:
+                   str, argv: Optional[str] = '', dargv: Optional[str] = '') -> bool:
         """
         Add method_name callback in dictionary
 
@@ -59,13 +61,14 @@ class AutoMethod:
         if request_method not in ['GET', 'OPTIONS', 'HEAD', 'POST', 'PUT', 'PATCH', 'DELETE']:
             logger.error(f"request {request_method} not a valid requests object supported methods")
             return False
-        if not re.match('^/.*',urlpath):
+        if not re.match('^/.*', urlpath):
             logger.error(f"urlpath should start with / method:{method_name} urlpath:{urlpath}")
             return False
         if method_name in self._am_callback.keys() and '_alias' in self._am_callback.get(method_name).keys():
-            logger.error(f"Could not update method {method_name} because it's an alias of {self._am_callback[method_name]['_alias']}")
+            logger.error(f"Can't update method {method_name} it's an alias {self._am_callback[method_name]['_alias']}")
             return False
-        self._am_callback.update({method_name: {'_request': request_method, '_urlpath': urlpath, '_argv': argv, '_dargv': dargv}})
+        self._am_callback.update({method_name: {'_request': request_method,
+                                                '_urlpath': urlpath, '_argv': argv, '_dargv': dargv}})
         return True
 
     def add_method_alias(self, method_name: str, alias_method_name: str) -> bool:
@@ -74,7 +77,7 @@ class AutoMethod:
 
         :param method_name: method name which will become a public callable in the parent class from __getattr__
         :type method_name: str
-        :param alias_method_name: alias method name which will become a public callable in the parent class from __getattr__
+        :param alias_method_name: alias method name will become a callable from parent class from __getattr__
         :type alias_method_name: str
         :returns: True if alias method is added
         :rtype: bool
@@ -85,8 +88,8 @@ class AutoMethod:
                 self._am_callback[alias_method_name]['_alias'] = method_name
                 return True
         return False
-    
-    def get_method(self, method_name: str) -> dict[str,str]:
+
+    def get_method(self, method_name: str) -> dict[str, str]:
         """
         Get callback dictionary from method_name
 
@@ -96,8 +99,8 @@ class AutoMethod:
         :rtype: dict
         """
         if self.is_method(method_name):
-            return self._am_callback[method_name] 
-        
+            return self._am_callback[method_name]
+
     def get_method_request(self, method_name: str) -> str:
         """
         Get request using method_name from dictionary
@@ -109,7 +112,7 @@ class AutoMethod:
         """
         if self.is_method(method_name):
             return self._am_callback[method_name]['_request']
-        
+
     def get_method_urlpath(self, method_name: str) -> str:
         """
         Get urlpath using method_name from dictionary

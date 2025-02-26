@@ -1,11 +1,11 @@
 __title__ = "unifi-sync"
 __description__ = "A simple unifi library client for Python"
 __url__ = "https://unifi-sync.readthedocs.io"
-__git_project__= 'https://github.com/kloodz-mrioux/py-unifi-sync'
-__git_repo__= 'https://github.com/kloodz-mrioux/py-unifi-sync.git'
+__git_project__ = 'https://github.com/kloodz-mrioux/py-unifi-sync'
+__git_repo__ = 'https://github.com/kloodz-mrioux/py-unifi-sync.git'
 __git_repouser__ = 'kloodz-mrioux'
 __git_reponame__ = 'py-unifi-sync'
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 __author__ = "Martial Rioux"
 __author_email__ = "martial.rioux@kloodz.com"
 __license__ = "MIT"
