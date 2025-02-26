@@ -3,14 +3,12 @@ from pathlib import Path
 from setuptools import find_packages, setup
 from codecs import open as codecs_open
 
-install_requires = (
-)
+about = {}
+base_path = os.path.abspath(os.path.dirname(__file__))
 
 def read(*parts):
     return Path(__file__).resolve().parent.joinpath(*parts).read_text().strip()
 
-about = {}
-base_path = os.path.abspath(os.path.dirname(__file__))
 with codecs_open(os.path.join(base_path, "src", "unifi_sync", "__version__.py"), "r", "utf-8") as f:
     exec(f.read(), about)
 
@@ -34,7 +32,7 @@ setup(
     license=about['__license__'],
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    install_requires=install_requires,
+    install_requires={},
     include_package_data=True,
     classifiers=[
         "License :: OSI Approved :: MIT License",

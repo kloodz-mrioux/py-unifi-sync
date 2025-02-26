@@ -25,22 +25,21 @@ Begin by importing the unifi-sync module::
 
     >>> from unifi_sync import UnifiSyncClient
 
-Now, let's try connect. For this example, let's setup unifi controller information::
-    >>> controller_username = 'username'
-    >>> controller_password = 'password'
-    >>> controller_baseurl = 'https://localhost:8443'
-    >>> site_name = 'default'
+For this example, let's setup unifi controller information::
+    >>> config = [ username := "ubnt", password := "ubnt", 
+    ... baseurl := "https://localhost:8443", site_name := "default"]
 
-    >>> client = UnifiSyncClient(controller_username, controller_password, controller_baseurl, site_name)
+Create client object using :class:`UnifiSyncClient <unifi_sync.UnifiSyncClient>` class with the controller information config::
+    >>> client = UnifiSyncClient(*config)
 
-Now, we have a :class:`UnifiSyncClient <unifi_sync.UnifiSyncClient>` object called ``client``. We can
-get all the information we need from this object.
+Now, we have a :class:`UnifiSyncClient <unifi_sync.UnifiSyncClient>` object called ``client``.
+We can get / set all the information we need with this object.
 
-To log in on  unifi controller::
+Now, let's try to connect on unifi controller::
     >>> client.login()
     True
 
-To log out from unifi controller::
+Finally we will disconnect from unifi controller::
     >>> client.logout()
     True
 

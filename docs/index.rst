@@ -30,13 +30,11 @@ Release v\ |version|. (:ref:`Installation <install>`)
 
 **Behold, the power of unifi-sync**::
 
-   >>> from unifi-sync import UnifiSyncClient
-   >>> controller_username = 'username'
-   >>> controller_password = 'password'
-   >>> controller_baseurl = 'https://localhost:8443'
-   >>> site_name = 'default'
-   >>> 
-   >>> client = UnifiSyncClient(controller_username, controller_password, controller_baseurl, site_name)
+   >>> from unifi_sync import UnifiSyncClient
+   >>>
+   >>> config = [ username := "ubnt", password := "ubnt", baseurl := "https://localhost:8443", site_name := "default"]
+   >>>
+   >>> client = UnifiSyncClient(*config)
    >>>
    >>> client.login()
    True
@@ -113,8 +111,7 @@ you.
 
    dev/contributing
    dev/authors
-
-{{ pathto('genindex') }}">Glossary</a>
+   genindex 
 
 Project Name
 ---------------------------
