@@ -125,6 +125,7 @@ select =
 per-file-ignores =
     __init__.py:F401,F403
     test*.py:F401,E402
+    docs/conf.py:F401,E402
 
 # Enable off-by-default extensions.
 enable-extensions =
